@@ -56,14 +56,14 @@
 	for (;;) {
 		if(NULL == stream.buffer || MAD_ERROR_BUFLEN == stream.error) {
 			if(stream.next_frame) {
-				bytesRemaining		= stream.bufend - stream.next_frame;
+				bytesRemaining		= (int)(stream.bufend - stream.next_frame);
 				
 				memmove(_inputBuffer, stream.next_frame, bytesRemaining);
 				
 				bytesToRead			= INPUT_BUFFER_SIZE - bytesRemaining;
 			}
 			else {
-				bytesToRead			= INPUT_BUFFER_SIZE,
+                bytesToRead			= INPUT_BUFFER_SIZE;
 				bytesRemaining		= 0;
 			}
 			
@@ -87,7 +87,7 @@
 			{
 				// Prevent ID3 tags from reporting recoverable frame errors
 				const uint8_t	*buffer			= stream.this_frame;
-				unsigned		buflen			= stream.bufend - stream.this_frame;
+				unsigned		buflen			= (unsigned)(stream.bufend - stream.this_frame);
 				
 				if(10 <= buflen && 0x49 == buffer[0] && 0x44 == buffer[1] && 0x33 == buffer[2]) {
 					id3_length = (((buffer[6] & 0x7F) << (3 * 7)) | ((buffer[7] & 0x7F) << (2 * 7)) |
@@ -111,7 +111,7 @@
 			}
 			else
 			{
-				//NSLog(@"Unrecoverable error: %s", mad_stream_errorstr(&stream));
+				NSLog(@"Unrecoverable error: %s", mad_stream_errorstr(&stream));
 				break;
 			}
 		}
@@ -266,7 +266,7 @@
 		else
 		{
 			totalFrames = (double)frame.header.samplerate * ((_fileSize - id3_length) / (frame.header.bitrate / 8.0));
-			//NSLog(@"Guestimating total samples");
+			NSLog(@"Guestimating total samples");
 			
 			break;
 		}
@@ -302,7 +302,7 @@
 	mad_synth_init(&_synth);
 	
 	_firstFrame = YES;
-	//NSLog(@"OPEN: %i", _firstFrame);
+	NSLog(@"OPEN: %i", _firstFrame);
 
 	inputEOF = NO;
 	
@@ -532,10 +532,8 @@ audio_linear_round(unsigned int bits,
 
 		if (_stream.next_frame != NULL)
 		{
-			inputRemaining = _stream.bufend - _stream.next_frame;
-
+			inputRemaining = (int)(_stream.bufend - _stream.next_frame);
 			memmove(_inputBuffer, _stream.next_frame, inputRemaining);
-
 			inputToRead = INPUT_BUFFER_SIZE - inputRemaining;
 		}
 		else
@@ -561,7 +559,7 @@ audio_linear_round(unsigned int bits,
 		if (MAD_RECOVERABLE (_stream.error))
 		{
 			const uint8_t	*buffer			= _stream.this_frame;
-			unsigned		buflen			= _stream.bufend - _stream.this_frame;
+			unsigned		buflen			= (unsigned)(_stream.bufend - _stream.this_frame);
 			uint32_t		id3_length		= 0;
 
 			//No longer need ID3Tag framework
@@ -585,19 +583,19 @@ audio_linear_round(unsigned int bits,
 		}
 		else if (MAD_ERROR_BUFLEN == _stream.error)
 		{
-			//NSLog(@"Bufferlen");
+			// NSLog(@"Bufferlen");
 			return 0;
 		}
 		else
 		{
-			//NSLog(@"Unrecoverable stream error: %s", mad_stream_errorstr(&_stream));
+			NSLog(@"Unrecoverable stream error: %s", mad_stream_errorstr(&_stream));
 			return -1;
 		}
 	}
 
-	//NSLog(@"Decoded buffer.");
-	mad_synth_frame (&_synth, &_frame);
-	//NSLog(@"first frame: %i", _firstFrame);
+	// NSLog(@"Decoded buffer.");
+	mad_synth_frame(&_synth, &_frame);
+	// NSLog(@"first frame: %i", _firstFrame);
 	if (_firstFrame)
 	{
 		_firstFrame = NO;
@@ -611,7 +609,7 @@ audio_linear_round(unsigned int bits,
 			[self willChangeValueForKey:@"properties"];
 			[self didChangeValueForKey:@"properties"];
 		}
-		//NSLog(@"FIRST FRAME!!! %i %i", _foundXingHeader, _foundLAMEHeader);
+		NSLog(@"FIRST FRAME!!! %i %i", _foundXingHeader, _foundLAMEHeader);
 		if (_foundXingHeader) {
 			//NSLog(@"Skipping xing header.");
 			return 0;

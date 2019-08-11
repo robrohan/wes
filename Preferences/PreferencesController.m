@@ -18,7 +18,6 @@
         // Determine path to the sample preference panes
         NSString *pluginPath = [[NSBundle mainBundle] pathForResource:@"General" ofType:@"preferencePane"];
 		NSBundle *bundle = [NSBundle bundleWithPath:pluginPath];
-
         
 		PreferencePluginController *pluginController = [[PreferencePluginController alloc] initWithPlugins:[NSArray arrayWithObject:bundle]];
 		

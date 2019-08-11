@@ -67,31 +67,31 @@ struct HotKeyMappingEntry
  */
 + (BOOL)install
 {
-	if( isInstalled == NO )
-	{
-		NSHashTable *		theHotKeyEvents = [self allHotKeyEvents];
-		EventTypeSpec		theTypeSpec[] =
-								{
-									{ kEventClassKeyboard, kEventHotKeyPressed },
-									{ kEventClassKeyboard, kEventHotKeyReleased }
-								};
+//    if( isInstalled == NO )
+//    {
+//        NSHashTable *        theHotKeyEvents = [self allHotKeyEvents];
+//        EventTypeSpec        theTypeSpec[] =
+//                                {
+//                                    { kEventClassKeyboard, kEventHotKeyPressed },
+//                                    { kEventClassKeyboard, kEventHotKeyReleased }
+//                                };
+//
+//        NDHotKeyEventLock;
+//            if( theHotKeyEvents != nil && isInstalled == NO )
+//            {
+//                if( InstallEventHandler( GetEventDispatcherTarget(), NewEventHandlerUPP((EventHandlerProcPtr)eventHandlerCallback), 2, theTypeSpec, theHotKeyEvents, nil ) == noErr )
+//                {
+//                    isInstalled = YES;
+//                }
+//                else
+//                {
+//                    NSLog(@"Could not install Event handler");
+//                }
+//            }
+//        NDHotKeyEventUnlock;
+//    }
 
-		NDHotKeyEventLock;
-			if( theHotKeyEvents != nil && isInstalled == NO )
-			{
-				if( InstallEventHandler( GetEventDispatcherTarget(), NewEventHandlerUPP((EventHandlerProcPtr)eventHandlerCallback), 2, theTypeSpec, theHotKeyEvents, nil ) == noErr )
-				{
-					isInstalled = YES;
-				}
-				else
-				{
-					NSLog(@"Could not install Event handler");
-				}
-			}
-		NDHotKeyEventUnlock;
-	}
-
-	return isInstalled;
+    return NO; // isInstalled;
 }
 
 #ifdef NDHotKeyEventThreadSafe
@@ -900,42 +900,42 @@ unichar unicharForKeyCode( unsigned short aKeyCode )
 	KeyboardLayoutRef		theCurrentKeyBoardLayout;
 	UInt32					theChar = kNullCharCode;
 	
-	if( KLGetCurrentKeyboardLayout( &theCurrentKeyBoardLayout ) == noErr && KLGetKeyboardLayoutProperty( theCurrentKeyBoardLayout, kKLKCHRData, &theKeyboardLayoutData) == noErr )
-	{
-		theChar = KeyTranslate ( theKeyboardLayoutData, aKeyCode, &theState );
-
-		switch( theChar )
-		{
-			case kHomeCharCode: theChar = NSHomeFunctionKey; break;
-//			case kEnterCharCode: theChar = ; break;
-			case kEndCharCode: theChar = NSEndFunctionKey; break;
-			case kHelpCharCode: theChar = NSHelpFunctionKey; break;
-//			case kBellCharCode: theChar = ; break;
-//			case kBackspaceCharCode: theChar = ; break;
-//			case kTabCharCode: theChar = ; break;
-//			case kLineFeedCharCode: theChar = ; break;
-			case kPageUpCharCode: theChar = NSPageUpFunctionKey; break;
-			case kPageDownCharCode: theChar = NSPageDownFunctionKey; break;
-//			case kReturnCharCode: theChar = ; break;
-			case kFunctionKeyCharCode: theChar = unicodeForFunctionKey( aKeyCode ); break;
-//			case kCommandCharCode: theChar = ; break;
-//			case kCheckCharCode: theChar = ; break;
-//			case kDiamondCharCode : theChar = ; break;
-//			case kAppleLogoCharCode: theChar = ; break;
-//			case kEscapeCharCode: theChar = ; break;
-			case kClearCharCode:
-				theChar = (aKeyCode==0x47) ? NSInsertFunctionKey : theChar;
-				break;
-			case kLeftArrowCharCode: theChar = NSLeftArrowFunctionKey; break;
-			case kRightArrowCharCode: theChar = NSRightArrowFunctionKey; break;
-			case kUpArrowCharCode: theChar = NSUpArrowFunctionKey; break;
-			case kDownArrowCharCode: theChar = NSDownArrowFunctionKey; break;
-//			case kSpaceCharCode: theChar = ; break;
-			case kDeleteCharCode: theChar = NSDeleteCharFunctionKey; break;
-//			case kBulletCharCode: theChar = ; break;
-//			case kNonBreakingSpaceCharCode: theChar = ; break;
-		}
-	}
+//    if( KLGetCurrentKeyboardLayout( &theCurrentKeyBoardLayout ) == noErr && KLGetKeyboardLayoutProperty( theCurrentKeyBoardLayout, kKLKCHRData, &theKeyboardLayoutData) == noErr )
+//    {
+//        theChar = KeyTranslate ( theKeyboardLayoutData, aKeyCode, &theState );
+//
+//        switch( theChar )
+//        {
+//            case kHomeCharCode: theChar = NSHomeFunctionKey; break;
+////            case kEnterCharCode: theChar = ; break;
+//            case kEndCharCode: theChar = NSEndFunctionKey; break;
+//            case kHelpCharCode: theChar = NSHelpFunctionKey; break;
+////            case kBellCharCode: theChar = ; break;
+////            case kBackspaceCharCode: theChar = ; break;
+////            case kTabCharCode: theChar = ; break;
+////            case kLineFeedCharCode: theChar = ; break;
+//            case kPageUpCharCode: theChar = NSPageUpFunctionKey; break;
+//            case kPageDownCharCode: theChar = NSPageDownFunctionKey; break;
+////            case kReturnCharCode: theChar = ; break;
+//            case kFunctionKeyCharCode: theChar = unicodeForFunctionKey( aKeyCode ); break;
+////            case kCommandCharCode: theChar = ; break;
+////            case kCheckCharCode: theChar = ; break;
+////            case kDiamondCharCode : theChar = ; break;
+////            case kAppleLogoCharCode: theChar = ; break;
+////            case kEscapeCharCode: theChar = ; break;
+//            case kClearCharCode:
+//                theChar = (aKeyCode==0x47) ? NSInsertFunctionKey : theChar;
+//                break;
+//            case kLeftArrowCharCode: theChar = NSLeftArrowFunctionKey; break;
+//            case kRightArrowCharCode: theChar = NSRightArrowFunctionKey; break;
+//            case kUpArrowCharCode: theChar = NSUpArrowFunctionKey; break;
+//            case kDownArrowCharCode: theChar = NSDownArrowFunctionKey; break;
+////            case kSpaceCharCode: theChar = ; break;
+//            case kDeleteCharCode: theChar = NSDeleteCharFunctionKey; break;
+////            case kBulletCharCode: theChar = ; break;
+////            case kNonBreakingSpaceCharCode: theChar = ; break;
+//        }
+//    }
 	
 	return theChar;
 }

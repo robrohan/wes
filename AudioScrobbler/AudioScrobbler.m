@@ -69,7 +69,7 @@ escapeForLastFM(NSString *string)
 {
 	if((self = [super init])) {
 
-		_pluginID = @"cog";
+		_pluginID = @"wes";
 
 		if([[NSUserDefaults standardUserDefaults] boolForKey:@"automaticallyLaunchLastFM"])
 			[[NSWorkspace sharedWorkspace] launchApplication:@"Last.fm.app"];
@@ -95,9 +95,11 @@ escapeForLastFM(NSString *string)
 	if([self keepProcessingAudioScrobblerCommands] || NO == [self audioScrobblerThreadCompleted])
 		[self shutdown];
 	
-	[_queue release], _queue = nil;
+    [_queue release];
+    _queue = nil;
 	
-	semaphore_destroy(mach_task_self(), _semaphore), _semaphore = 0;
+    semaphore_destroy(mach_task_self(), _semaphore);
+    _semaphore = 0;
 
 	[super dealloc];
 }

@@ -9,10 +9,12 @@
 	[self setSelectsInsertedObjects:NO];
 			
 	UInt32 propsize;
-	verify_noerr(AudioHardwareGetPropertyInfo(kAudioHardwarePropertyDevices, &propsize, NULL));
+//	verify_noerr(AudioHardwareGetPropertyInfo(kAudioHardwarePropertyDevices, &propsize, NULL));
+    AudioHardwareGetPropertyInfo(kAudioHardwarePropertyDevices, &propsize, NULL);
 	int nDevices = propsize / sizeof(AudioDeviceID);	
 	AudioDeviceID *devids = malloc(propsize);
-	verify_noerr(AudioHardwareGetProperty(kAudioHardwarePropertyDevices, &propsize, devids));
+//	verify_noerr(AudioHardwareGetProperty(kAudioHardwarePropertyDevices, &propsize, devids));
+    AudioHardwareGetProperty(kAudioHardwarePropertyDevices, &propsize, devids);
 	int i;
 	
 	NSDictionary *defaultDevice = [[[NSUserDefaultsController sharedUserDefaultsController] defaults] objectForKey:@"outputDevice"];
@@ -20,12 +22,14 @@
 	for (i = 0; i < nDevices; ++i) {
 		char name[256];
 		UInt32 maxlen = 256;
-		verify_noerr(AudioDeviceGetProperty(devids[i], 0, false, kAudioDevicePropertyDeviceName, &maxlen, name));
+//		verify_noerr(AudioDeviceGetProperty(devids[i], 0, false, kAudioDevicePropertyDeviceName, &maxlen, name));
+        AudioDeviceGetProperty(devids[i], 0, false, kAudioDevicePropertyDeviceName, &maxlen, name);
 		
 		// Ignore devices that have no output channels:
 		// This tells us the size of the buffer required to hold the information about the channels
 		UInt32 propSize;
-		verify_noerr(AudioDeviceGetPropertyInfo(devids[i], 0, false, kAudioDevicePropertyStreamConfiguration, &propSize, NULL));
+//		verify_noerr(AudioDeviceGetPropertyInfo(devids[i], 0, false, kAudioDevicePropertyStreamConfiguration, &propSize, NULL));
+        AudioDeviceGetPropertyInfo(devids[i], 0, false, kAudioDevicePropertyStreamConfiguration, &propSize, NULL);
 		// Knowing the size of the required buffer, we can determine how many channels there are
 		// without actually allocating a buffer and requesting the information.
 		// (we don't care about the exact number of channels, only if there are more than zero or not)

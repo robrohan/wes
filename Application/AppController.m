@@ -249,7 +249,7 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 	}
 	
 	[[playlistController undoManager] disableUndoRegistration];
-	NSString *filename = @"~/Library/Application Support/Cog/Default.m3u";
+	NSString *filename = @"~/Library/Application Support/Wes/Default.m3u";
 	[playlistLoader addURL:[NSURL fileURLWithPath:[filename stringByExpandingTildeInPath]]];
 	[[playlistController undoManager] enableUndoRegistration];
 }
@@ -259,7 +259,7 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 	[playbackController stop:self];
 	
 	NSFileManager *fileManager = [NSFileManager defaultManager];
-	NSString *folder = @"~/Library/Application Support/Cog/";
+	NSString *folder = @"~/Library/Application Support/Wes/";
 	
 	folder = [folder stringByExpandingTildeInPath];
 	

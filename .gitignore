@@ -1,0 +1,47 @@
+.DS_Store
+.Trashes
+*.swp
+
+*.lock
+
+*~.nib
+DerivedData/
+build/
+
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+#    NB: also, whitelist the default ones, some projects need to use these
+!default.pbxuser
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+
+*.xccheckout
+
+xcuserdata/
+
+# Workspace layout is quite spammy. For reference:
+#
+# /(root)/
+#   /(project-name).xcodeproj/
+#     project.pbxproj
+#     /project.xcworkspace/
+#       contents.xcworkspacedata
+#       /xcuserdata/
+#         /(your name)/xcuserdatad/
+#           UserInterfaceState.xcuserstate
+#     /xcshareddata/
+#       /xcschemes/
+#         (shared scheme name).xcscheme
+#     /xcuserdata/
+#       /(your name)/xcuserdatad/
+#         (private scheme).xcscheme
+#         xcschememanagement.plist
+#
+
+*.moved-aside
+.hg
+.hgignore
