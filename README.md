@@ -6,7 +6,7 @@ It's goal is to be a application along the lines of the original Winamp or the o
 
 ![Wes screenshot](./Images/screenshot.png)
 
-Wes was forked from an old applciation called _Cog_ (see the [orignial readme](#Original%20Readme) section below). I've started stripping things out of the original app I didn't want - last.fm integration, growl notifications, auto update, internet play, and anything else that got in the way of just playing some local files. It's a bit messy in there, but it's close to exacty what I want.
+Wes was forked from an old applciation called _Cog_ (see the [orignial readme](#original-readme) section below). I've started stripping things out of the original app I didn't want - last.fm integration, growl notifications, auto update, internet play, and anything else that got in the way of just playing some local files. It's a bit messy in there, but it's close to exacty what I want.
 
 _Cog_ hadn't been updated since 2010 so I've started trying to bring it into 2019. Beause it's a bit older, Wes is a bit finiky at the moment, and he sometimes just drops off in the middle of a solo (aka crashes) on some formats.
 
