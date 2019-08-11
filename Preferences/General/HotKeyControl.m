@@ -113,6 +113,6 @@ extern CGError CGSSetGlobalHotKeyOperatingMode(CGSConnection connection,
 
 - (void)updateStringValue
 {
-	[self setStringValue:stringForKeyCodeAndModifierFlags( keyCode, character, modifierFlags )];
+	// [self setStringValue:stringForKeyCodeAndModifierFlags(keyCode, character, modifierFlags)];
 }
 @end

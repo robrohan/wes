@@ -17,11 +17,11 @@
 	
 	return [NSArray arrayWithObjects: 
 			[plugin playlistPane],
-			[plugin hotKeyPane],
-			[plugin remotePane],
-			[plugin updatesPane],
+//            [plugin hotKeyPane],
+//            [plugin remotePane],
+//            [plugin updatesPane],
 			[plugin outputPane],
-			[plugin scrobblerPane],
+//            [plugin scrobblerPane],
 			nil];
 }	
 

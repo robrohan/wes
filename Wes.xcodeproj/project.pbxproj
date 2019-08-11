@@ -180,13 +180,6 @@
 			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
 			remoteInfo = AudioOverload;
 		};
-		17BF2B260CDD77EB007E1295 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 17BF2B1F0CDD77EB007E1295 /* Sparkle.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
-			remoteInfo = Sparkle;
-		};
 		17C808780C3BD167005707C4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 17C808710C3BD167005707C4 /* FileSource.xcodeproj */;
@@ -542,7 +535,7 @@
 		1766C88D0B912FB4004A7AE4 /* info_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = info_on.png; path = Images/info_on.png; sourceTree = "<group>"; };
 		1766C8900B912FB4004A7AE4 /* shuffle_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shuffle_off.png; path = Images/shuffle_off.png; sourceTree = "<group>"; };
 		1766C8910B912FB4004A7AE4 /* shuffle_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shuffle_on.png; path = Images/shuffle_on.png; sourceTree = "<group>"; };
-		1770424E0B8BC41800B86321 /* Cog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1770424E0B8BC41800B86321 /* Wes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		177042970B8BC53600B86321 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		177042980B8BC53600B86321 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		177042990B8BC53600B86321 /* PlaybackController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PlaybackController.h; sourceTree = "<group>"; };
@@ -625,7 +618,6 @@
 		17BB5CF70B8A86350009ACB1 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = /System/Library/Frameworks/CoreAudio.framework; sourceTree = "<absolute>"; };
 		17BB5CF80B8A86350009ACB1 /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = /System/Library/Frameworks/CoreAudioKit.framework; sourceTree = "<absolute>"; };
 		17BB5EA50B8A87850009ACB1 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
-		17BF2B1F0CDD77EB007E1295 /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sparkle.xcodeproj; path = Frameworks/Sparkle/Sparkle.xcodeproj; sourceTree = "<group>"; };
 		17C808660C3BD0F8005707C4 /* CoreAudio.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreAudio.xcodeproj; path = Plugins/CoreAudio/CoreAudio.xcodeproj; sourceTree = SOURCE_ROOT; };
 		17C808710C3BD167005707C4 /* FileSource.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FileSource.xcodeproj; path = Plugins/FileSource/FileSource.xcodeproj; sourceTree = "<group>"; };
 		17C8087A0C3BD173005707C4 /* Flac.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Flac.xcodeproj; path = Plugins/Flac/Flac.xcodeproj; sourceTree = "<group>"; };
@@ -792,7 +784,6 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				17BF2B1F0CDD77EB007E1295 /* Sparkle.xcodeproj */,
 				17F5612A0C3BD4DC0019975C /* CogAudio.xcodeproj */,
 				8E6889230AAA403C00AD3950 /* Carbon.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
@@ -997,14 +988,6 @@
 			isa = PBXGroup;
 			children = (
 				17B7CF7C0F5A09FD00A47027 /* AudioOverload.bundle */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		17BF2B200CDD77EB007E1295 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				17BF2B270CDD77EB007E1295 /* Sparkle.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1233,7 +1216,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1770424E0B8BC41800B86321 /* Cog.app */,
+				1770424E0B8BC41800B86321 /* Wes.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1444,9 +1427,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D1107260486CEB800E47090 /* Cog */ = {
+		8D1107260486CEB800E47090 /* Wes */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Cog" */;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Wes" */;
 			buildPhases = (
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
@@ -1477,10 +1460,10 @@
 				17C8F7DA0CBEF3F9008D969D /* PBXTargetDependency */,
 				17643CBC0D5BD44900F0A9FE /* PBXTargetDependency */,
 			);
-			name = Cog;
+			name = Wes;
 			productInstallPath = "$(HOME)/Applications";
 			productName = Cog;
-			productReference = 1770424E0B8BC41800B86321 /* Cog.app */;
+			productReference = 1770424E0B8BC41800B86321 /* Wes.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1491,7 +1474,7 @@
 			attributes = {
 				LastUpgradeCheck = 1010;
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Cog" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Wes" */;
 			compatibilityVersion = "Xcode 3.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 1;
@@ -1578,10 +1561,6 @@
 					ProjectRef = 17C808A70C3BD1BA005707C4 /* Shorten.xcodeproj */;
 				},
 				{
-					ProductGroup = 17BF2B200CDD77EB007E1295 /* Products */;
-					ProjectRef = 17BF2B1F0CDD77EB007E1295 /* Sparkle.xcodeproj */;
-				},
-				{
 					ProductGroup = 17C808B10C3BD1C5005707C4 /* Products */;
 					ProjectRef = 17C808B00C3BD1C5005707C4 /* TagLib.xcodeproj */;
 				},
@@ -1600,7 +1579,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* Cog */,
+				8D1107260486CEB800E47090 /* Wes */,
 			);
 		};
 /* End PBXProject section */
@@ -1611,13 +1590,6 @@
 			fileType = wrapper.cfbundle;
 			path = AudioOverload.bundle;
 			remoteRef = 17B7CF7B0F5A09FD00A47027 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		17BF2B270CDD77EB007E1295 /* Sparkle.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Sparkle.framework;
-			remoteRef = 17BF2B260CDD77EB007E1295 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		17C808790C3BD167005707C4 /* FileSource.bundle */ = {
@@ -2120,8 +2092,8 @@
 					"-weak_framework",
 					CogAudio,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.cogx.cog;
-				PRODUCT_NAME = Cog;
+				PRODUCT_BUNDLE_IDENTIFIER = com.robrohan.Wes;
+				PRODUCT_NAME = Wes;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
@@ -2155,8 +2127,8 @@
 					"-weak_framework",
 					CogAudio,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.cogx.cog;
-				PRODUCT_NAME = Cog;
+				PRODUCT_BUNDLE_IDENTIFIER = com.robrohan.Wes;
+				PRODUCT_NAME = Wes;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
@@ -2235,7 +2207,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Cog" */ = {
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Wes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4B08A954540054247B /* Debug */,
@@ -2244,7 +2216,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Cog" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Wes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,

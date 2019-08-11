@@ -22,31 +22,32 @@
 
 - (id)initWithPreferencePanes:(NSArray *)panes
 {
-    self = [super initWithContentRect:NSMakeRect(0, 0, 350, 200)
-                                              styleMask:(NSClosableWindowMask | NSResizableWindowMask)
-                                                backing:NSBackingStoreBuffered
-                                                  defer:NO];
-	if (self)
-	{
-		preferencePaneOrder = [[NSMutableArray alloc] init];
-		preferencePanes = [[NSMutableDictionary alloc] init];
-		
-		for (id<PreferencePane> pane in panes) {
-			[preferencePaneOrder addObject:[pane title]];
-			[preferencePanes setObject:pane forKey:[pane title]];
-		}
-		
-		[self setReleasedWhenClosed:NO];
-		[self setTitle:@"Preferences"]; // initial default title
-		[self setShowsToolbarButton: NO];
-		[self setShowsResizeIndicator:NO];
-		[self center];
-		
-		[self createToolbar];
-	}
-	
-	return self;
+    self = [super initWithContentRect: NSMakeRect(0, 0, 350, 200)
+                            styleMask: (NSWindowStyleMaskTitled | NSWindowStyleMaskClosable)
+                              backing: NSBackingStoreBuffered
+                                defer: NO];
+    if (self)
+    {
+        preferencePaneOrder = [[NSMutableArray alloc] init];
+        preferencePanes = [[NSMutableDictionary alloc] init];
+
+        for (id<PreferencePane> pane in panes) {
+            [preferencePaneOrder addObject:[pane title]];
+            [preferencePanes setObject:pane forKey:[pane title]];
+        }
+
+        [self setReleasedWhenClosed:NO];
+        [self setTitle:@"Preferences"]; // initial default title
+        [self setShowsToolbarButton: NO];
+        [self setShowsResizeIndicator:NO];
+        [self center];
+
+        [self createToolbar];
+    }
+
+    return self;
 }
+
 
 - (void)dealloc
 {
@@ -56,6 +57,10 @@
 	[super dealloc];
 }
 
+- (BOOL) canBecomeKeyWindow {
+    return YES;
+}
+    
 - (NSString *)lastPaneDefaultsKey
 {
 	return @"LastPreferencePane";
@@ -97,13 +102,11 @@
     }
 	
 	[self setContentView:paneView animate:display];
-    
-	
+
 	[self setTitle:name];
     
     // Update defaults
     [[NSUserDefaults standardUserDefaults] setObject:name forKey:[self lastPaneDefaultsKey]];
-	
     [[self toolbar] setSelectedItemIdentifier:name];
     
     return YES;
@@ -115,35 +118,34 @@
 	for (NSString *name in preferencePaneOrder) {
 		id<PreferencePane> pane = [preferencePanes objectForKey:name];
 		
-		NSToolbarItem *item = [[NSToolbarItem alloc] initWithItemIdentifier:name];
-		[item setPaletteLabel:name]; // item's label in the "Customize Toolbar" sheet (not relevant here, but we set it anyway)
-		[item setLabel:name]; // item's label in the toolbar
-		
-		[item setToolTip:name];
-		[item setImage:[pane icon]];
-		
-		[item setTarget:self];
-		[item setAction:@selector(toolbarItemClicked:)]; // action called when item is clicked
-		
-		[toolbarItems setObject:item forKey:name];
-		
-		[item release];
+        NSToolbarItem *item = [[NSToolbarItem alloc] initWithItemIdentifier:name];
+        [item setPaletteLabel:name]; // item's label in the "Customize Toolbar" sheet (not relevant here, but we set it anyway)
+        [item setLabel:name]; // item's label in the toolbar
+
+        [item setToolTip:name];
+        [item setImage:[pane icon]];
+
+        [item setTarget:self];
+        [item setAction:@selector(toolbarItemClicked:)]; // action called when item is clicked
+
+        [toolbarItems setObject:item forKey:name];
+
+        [item release];
 	}
 	
 	NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
-	NSToolbar *toolbar = [[NSToolbar alloc] initWithIdentifier:[bundleIdentifier stringByAppendingString:@" Preferences Toolbar"]];
-	[toolbar setDelegate:self];
-	[toolbar setAllowsUserCustomization:NO];
-	[toolbar setAutosavesConfiguration:NO];
-	[toolbar setDisplayMode:NSToolbarDisplayModeIconAndLabel];
-	
-	[toolbar setSizeMode:NSToolbarSizeModeDefault];
-	
-	[self setToolbar:toolbar];
-	[toolbar release];
+    NSToolbar *toolbar = [[NSToolbar alloc] initWithIdentifier:[bundleIdentifier stringByAppendingString:@" Preferences Toolbar"]];
+    [toolbar setDelegate: self];
+    [toolbar setAllowsUserCustomization: NO];
+    [toolbar setAutosavesConfiguration: NO];
+//    [toolbar setDisplayMode: NSToolbarDisplayModeIconAndLabel];
+    [toolbar setDisplayMode: NSToolbarDisplayModeLabelOnly];
+
+    [toolbar setSizeMode: NSToolbarSizeModeDefault];
+
+    [self setToolbar:toolbar];
+    [toolbar release];
 }
-
-
 
 - (void)show
 {
@@ -157,7 +159,6 @@
 	}
 	
 	[self loadPaneNamed:lastPane display:NO];
-	
 	[self makeKeyAndOrderFront:self];
 }
 

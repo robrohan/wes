@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment version="101200" identifier="macosx"/>
-        <development version="10000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,7 +14,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window title="Cog" allowsToolTipsWhenApplicationIsInactive="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="Cog" animationBehavior="default" id="21" userLabel="Window" customClass="MainWindow">
+        <window title="Wes" allowsToolTipsWhenApplicationIsInactive="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="Wes" animationBehavior="default" titlebarAppearsTransparent="YES" id="21" userLabel="Window" customClass="MainWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="1051" y="196" width="691" height="397"/>
@@ -325,7 +324,7 @@
                         <nil key="toolTip"/>
                         <size key="minSize" width="96" height="22"/>
                         <size key="maxSize" width="96" height="22"/>
-                        <searchField key="view" verticalHuggingPriority="750" textCompletion="NO" id="1531">
+                        <searchField key="view" wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" id="1531">
                             <rect key="frame" x="0.0" y="14" width="96" height="22"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="All" bezelStyle="round" recentsAutosaveName="CogFilter" id="1532">
@@ -424,7 +423,7 @@
                         <size key="minSize" width="38" height="14"/>
                         <size key="maxSize" width="38" height="14"/>
                         <textField key="view" verticalHuggingPriority="750" id="1566" customClass="TimeField">
-                            <rect key="frame" x="20" y="14" width="38" height="14"/>
+                            <rect key="frame" x="19" y="14" width="38" height="14"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0:00" id="1567">
                                 <font key="font" metaFont="smallSystem"/>
@@ -438,7 +437,7 @@
                         <size key="minSize" width="24" height="25"/>
                         <size key="maxSize" width="24" height="25"/>
                         <button key="view" verticalHuggingPriority="750" imageHugsTitle="YES" id="1608" customClass="VolumeButton">
-                            <rect key="frame" x="12" y="14" width="24" height="25"/>
+                            <rect key="frame" x="11" y="14" width="24" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="volume_high" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1609">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -454,7 +453,7 @@
                         <size key="minSize" width="24" height="25"/>
                         <size key="maxSize" width="24" height="25"/>
                         <button key="view" verticalHuggingPriority="750" imageHugsTitle="YES" id="1627">
-                            <rect key="frame" x="23" y="14" width="24" height="25"/>
+                            <rect key="frame" x="28" y="14" width="24" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="info_off" imagePosition="only" alignment="center" borderStyle="border" id="1628">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -470,7 +469,7 @@
                         <size key="minSize" width="24" height="25"/>
                         <size key="maxSize" width="24" height="25"/>
                         <button key="view" verticalHuggingPriority="750" imageHugsTitle="YES" id="1631">
-                            <rect key="frame" x="15" y="14" width="24" height="25"/>
+                            <rect key="frame" x="14" y="14" width="24" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="files_off" imagePosition="only" alignment="center" borderStyle="border" id="1632">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -486,7 +485,7 @@
                         <size key="minSize" width="24" height="25"/>
                         <size key="maxSize" width="24" height="25"/>
                         <button key="view" verticalHuggingPriority="750" imageHugsTitle="YES" id="1637">
-                            <rect key="frame" x="10" y="14" width="24" height="25"/>
+                            <rect key="frame" x="11" y="14" width="24" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="shuffle_on" imagePosition="only" alignment="center" borderStyle="border" id="1638">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -555,13 +554,13 @@
                 <outlet property="otherWindow" destination="2234" id="2304"/>
             </connections>
         </window>
-        <window title="Cog" allowsToolTipsWhenApplicationIsInactive="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="Mini Window" animationBehavior="default" id="2234" userLabel="Mini Window (Window)" customClass="MiniWindow">
+        <window title="Wes" allowsToolTipsWhenApplicationIsInactive="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="Mini Window" animationBehavior="default" id="2234" userLabel="Mini Window (Window)" customClass="MiniWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="509" width="481" height="0.0"/>
+            <rect key="contentRect" x="196" y="509" width="484" height="0.0"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
             <view key="contentView" id="2235">
-                <rect key="frame" x="0.0" y="0.0" width="481" height="0.0"/>
+                <rect key="frame" x="0.0" y="0.0" width="484" height="0.0"/>
                 <autoresizingMask key="autoresizingMask"/>
             </view>
             <toolbar key="toolbar" implicitIdentifier="35998ECE-5AD8-429E-8479-657249B22C9C" displayMode="iconOnly" sizeMode="regular" id="2222" userLabel="Mini Toolbar">
@@ -720,34 +719,17 @@
                 </binding>
                 <outlet property="otherWindow" destination="21" id="2305"/>
             </connections>
+            <point key="canvasLocation" x="1" y="699"/>
         </window>
         <menu title="MainMenu" systemMenu="main" id="29" userLabel="MainMenu">
             <items>
-                <menuItem title="Cog" id="56">
-                    <menu key="submenu" title="Cog" systemMenu="apple" id="57">
+                <menuItem title="Wes" id="56" userLabel="Wes">
+                    <menu key="submenu" title="Wes" systemMenu="apple" id="57">
                         <items>
-                            <menuItem title="About Cog" id="58">
+                            <menuItem title="About Wes" id="58" userLabel="About Wes">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Check for Updates..." id="302">
-                                <connections>
-                                    <action selector="checkForUpdates:" target="1303" id="1304"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="1100">
-                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
-                            </menuItem>
-                            <menuItem title="Support Cog..." id="751">
-                                <connections>
-                                    <action selector="donate:" target="226" id="752"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Send Feedback..." id="303">
-                                <connections>
-                                    <action selector="showWindow:" target="2434" id="2436"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="196">
@@ -767,7 +749,7 @@
                             <menuItem isSeparatorItem="YES" id="144">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Hide Cog" keyEquivalent="h" id="134">
+                            <menuItem title="Hide Wes" keyEquivalent="h" id="134" userLabel="Hide Wes">
                                 <connections>
                                     <action selector="hide:" target="-2" id="152"/>
                                 </connections>
@@ -786,7 +768,7 @@
                             <menuItem isSeparatorItem="YES" id="149">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Quit Cog" keyEquivalent="q" id="136">
+                            <menuItem title="Quit Wes" keyEquivalent="q" id="136" userLabel="Quit Wes">
                                 <connections>
                                     <action selector="terminate:" target="-2" id="139"/>
                                 </connections>
@@ -800,11 +782,6 @@
                             <menuItem title="Add File..." keyEquivalent="o" id="72">
                                 <connections>
                                     <action selector="openFiles:" target="226" id="1405"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Add URL..." keyEquivalent="O" id="1403">
-                                <connections>
-                                    <action selector="openURL:" target="226" id="1440"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="79">
@@ -886,7 +863,7 @@
                                     <action selector="toggleWindow:" target="2422" id="2423"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Show Spotlight Panel" keyEquivalent="F" id="1853">
+                            <menuItem title="Show Spotlight Panel" enabled="NO" keyEquivalent="F" id="1853">
                                 <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                                 <connections>
                                     <action selector="toggleWindow:" target="1675" id="1880"/>
@@ -1282,7 +1259,7 @@ Gw
                             <menuItem isSeparatorItem="YES" id="1642">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Cog" keyEquivalent="1" id="702">
+                            <menuItem title="Wes" keyEquivalent="1" id="702">
                                 <connections>
                                     <action selector="makeKeyAndOrderFront:" target="21" id="704"/>
                                 </connections>
@@ -1301,7 +1278,7 @@ Gw
                 <menuItem title="Help" id="103">
                     <menu key="submenu" title="Help" id="106">
                         <items>
-                            <menuItem title="Cog Help" keyEquivalent="?" id="111">
+                            <menuItem title="Wes Help" keyEquivalent="?" id="111">
                                 <connections>
                                     <action selector="showHelp:" target="-1" id="122"/>
                                 </connections>
@@ -1310,6 +1287,7 @@ Gw
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="322" y="577"/>
         </menu>
         <arrayController objectClassName="PlaylistEntry" editable="NO" id="218" userLabel="PlaylistController" customClass="PlaylistController">
             <declaredKeys>

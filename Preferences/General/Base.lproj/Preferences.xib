@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="macosx"/>
-        <development version="10000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -130,6 +129,7 @@
                     </connections>
                 </textField>
             </subviews>
+            <point key="canvasLocation" x="13" y="317"/>
         </customView>
         <customView id="43" userLabel="RemoteView">
             <rect key="frame" x="0.0" y="0.0" width="432" height="74"/>
@@ -159,6 +159,7 @@
                     </connections>
                 </button>
             </subviews>
+            <point key="canvasLocation" x="-22" y="-43"/>
         </customView>
         <customView id="50" userLabel="UpdatesView">
             <rect key="frame" x="0.0" y="0.0" width="432" height="82"/>
@@ -249,6 +250,7 @@
                     </connections>
                 </popUpButton>
             </subviews>
+            <point key="canvasLocation" x="198" y="123"/>
         </customView>
         <arrayController id="59" userLabel="OutputDevices" customClass="OutputsArrayController">
             <declaredKeys>
@@ -283,6 +285,7 @@
                     </connections>
                 </button>
             </subviews>
+            <point key="canvasLocation" x="13" y="193"/>
         </customView>
         <arrayController objectClassName="NSDictionary" editable="NO" selectsInsertedObjects="NO" id="115" userLabel="Appcasts" customClass="AppcastArrayController">
             <declaredKeys>
@@ -366,6 +369,7 @@
                     </connections>
                 </button>
             </subviews>
+            <point key="canvasLocation" x="77" y="-4"/>
         </customView>
         <arrayController objectClassName="NSDictionary" editable="NO" selectsInsertedObjects="NO" id="246" userLabel="PlaylistBehavior" customClass="PlaylistBehaviorArrayController">
             <declaredKeys>

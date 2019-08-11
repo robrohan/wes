@@ -107,7 +107,7 @@ static PluginController *sharedPluginController = nil;
 - (void)loadPlugins
 {
 	[self loadPluginsAtPath:[[NSBundle mainBundle] builtInPlugInsPath]];
-	[self loadPluginsAtPath:[@"~/Library/Application Support/Cog/Plugins" stringByExpandingTildeInPath]];
+	[self loadPluginsAtPath:[@"~/Library/Application Support/Wes/Plugins" stringByExpandingTildeInPath]];
 }
 
 - (void)setupContainer:(NSString *)className
