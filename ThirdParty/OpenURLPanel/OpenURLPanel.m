@@ -216,7 +216,7 @@ static OpenURLPanel *openURLPanel = nil;
 	if (informDelegate && mDelegate && mDidEndSelector)
 	{
 		callback = [mDelegate methodForSelector:mDidEndSelector];
-		callback(mDelegate, mDidEndSelector, self, [sender tag], mContextInfo);
+		// callback(mDelegate, mDidEndSelector, self, [sender tag], mContextInfo);
 		
 		[self close];
 	}

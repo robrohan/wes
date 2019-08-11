@@ -36,7 +36,7 @@
 		[queue setMaxConcurrentOperationCount:1];
 		
 		scrobbler = [[AudioScrobbler alloc] init];
-		[GrowlApplicationBridge setGrowlDelegate:self];
+		// [GrowlApplicationBridge setGrowlDelegate:self];
 	}
 	
 	return self;
@@ -62,13 +62,13 @@
 		}
 		
 		// Note: We don't want to send a growl notification on resume.
-		[GrowlApplicationBridge notifyWithTitle:[pe title]
-									description:[pe artist]
-							   notificationName:@"Stream Changed"
-									   iconData:[[pe albumArt] TIFFRepresentation]
-									   priority:0 
-									   isSticky:NO 
-								   clickContext:nil];
+//        [GrowlApplicationBridge notifyWithTitle:[pe title]
+//                                    description:[pe artist]
+//                               notificationName:@"Stream Changed"
+//                                       iconData:[[pe albumArt] TIFFRepresentation]
+//                                       priority:0 
+//                                       isSticky:NO 
+//                                   clickContext:nil];
 	}
 }
 
@@ -135,9 +135,9 @@
 	NSArray *notifications = [NSArray arrayWithObjects:@"Stream Changed", nil];
 	
 	return [NSDictionary dictionaryWithObjectsAndKeys:
-			@"Cog", GROWL_APP_NAME,  
-			notifications, GROWL_NOTIFICATIONS_ALL, 
-			notifications, GROWL_NOTIFICATIONS_DEFAULT,
+//            @"Cog", GROWL_APP_NAME,
+//            notifications, GROWL_NOTIFICATIONS_ALL,
+//            notifications, GROWL_NOTIFICATIONS_DEFAULT,
 			nil];
 }
 

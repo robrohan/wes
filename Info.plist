@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>LSMinimumSystemVersion</key>
-	<string>10.5.0</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDocumentTypes</key>
@@ -91,7 +89,7 @@
 			<key>CFBundleTypeIconFile</key>
 			<string>ape.icns</string>
 			<key>CFBundleTypeName</key>
-			<string>Monkey&apos;s Audio File</string>
+			<string>Monkey's Audio File</string>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
 			<key>LSTypeIsPackage</key>
@@ -441,7 +439,7 @@
 	<key>CFBundleIconFile</key>
 	<string>wheel</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.cogx.cog</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -452,6 +450,8 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>r516</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.5.0</string>
 	<key>NSAppleScriptEnabled</key>
 	<string>YES</string>
 	<key>NSMainNibFile</key>

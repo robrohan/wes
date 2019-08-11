@@ -72,8 +72,6 @@
 		6196CFE309C71ADE000DC222 /* SUStatusController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUStatusController.h; sourceTree = "<group>"; };
 		6196CFE409C71ADE000DC222 /* SUStatusController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUStatusController.m; sourceTree = "<group>"; };
 		61AAE8230A321A7F00D8810D /* en */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Sparkle.strings; sourceTree = "<group>"; };
-		61AAE8250A321A7F00D8810D /* en */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = en; path = en.lproj/SUAutomaticUpdateAlert.nib; sourceTree = "<group>"; };
-		61AAE8270A321A7F00D8810D /* en */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = en; path = en.lproj/SUUpdateAlert.nib; sourceTree = "<group>"; };
 		61AAE82D0A321AA200D8810D /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/Sparkle.strings; sourceTree = "<group>"; };
 		61AAE82E0A321AA200D8810D /* ca */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = ca; path = ca.lproj/SUAutomaticUpdateAlert.nib; sourceTree = "<group>"; };
 		61AAE82F0A321AA200D8810D /* ca */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = ca; path = ca.lproj/SUUpdateAlert.nib; sourceTree = "<group>"; };
@@ -172,6 +170,8 @@
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* Sparkle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sparkle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		DAC63FEE22FF9A0A00E7DBBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/SUAutomaticUpdateAlert.nib; sourceTree = "<group>"; };
+		DAC63FEF22FF9A0A00E7DBBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/SUUpdateAlert.nib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -393,8 +393,12 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "Sparkle" */;
 			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -428,6 +432,7 @@
 				th,
 				tr,
 				zh_CN,
+				Base,
 			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* Sparkle */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
@@ -516,7 +521,6 @@
 		61AAE8240A321A7F00D8810D /* SUAutomaticUpdateAlert.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				61AAE8250A321A7F00D8810D /* en */,
 				61AAE82E0A321AA200D8810D /* ca */,
 				61AAE8400A321AD200D8810D /* cs */,
 				61AAE8430A321ADC00D8810D /* cy */,
@@ -542,6 +546,7 @@
 				61AAE8870A32203000D8810D /* tr */,
 				61AAE88A0A32203800D8810D /* zh_CN */,
 				61AAE88D0A32203F00D8810D /* zh_TW */,
+				DAC63FEE22FF9A0A00E7DBBF /* Base */,
 			);
 			name = SUAutomaticUpdateAlert.nib;
 			sourceTree = "<group>";
@@ -549,7 +554,6 @@
 		61AAE8260A321A7F00D8810D /* SUUpdateAlert.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				61AAE8270A321A7F00D8810D /* en */,
 				61AAE82F0A321AA200D8810D /* ca */,
 				61AAE8410A321AD200D8810D /* cs */,
 				61AAE8440A321ADC00D8810D /* cy */,
@@ -575,6 +579,7 @@
 				61AAE8880A32203000D8810D /* tr */,
 				61AAE88B0A32203800D8810D /* zh_CN */,
 				61AAE88E0A32203F00D8810D /* zh_TW */,
+				DAC63FEF22FF9A0A00E7DBBF /* Base */,
 			);
 			name = SUUpdateAlert.nib;
 			sourceTree = "<group>";
@@ -585,17 +590,13 @@
 		1DEB91AE08733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)";
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
@@ -607,6 +608,7 @@
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				MACH_O_TYPE = mh_dylib;
 				OTHER_LDFLAGS = "-lcrypto";
+				PRODUCT_BUNDLE_IDENTIFIER = org.andymatuschak.Sparkle;
 				PRODUCT_NAME = Sparkle;
 				SKIP_INSTALL = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -619,17 +621,13 @@
 		1DEB91AF08733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)";
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
@@ -639,9 +637,9 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				MACH_O_TYPE = mh_dylib;
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_LDFLAGS = "-lcrypto";
-				PREBINDING = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.andymatuschak.Sparkle;
 				PRODUCT_NAME = Sparkle;
 				SKIP_INSTALL = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -655,15 +653,36 @@
 		1DEB91B208733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					i386,
-					ppc,
-				);
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
 				SYMROOT = ../../build;
 				WARNING_CFLAGS = "-wall";
 			};
@@ -672,15 +691,34 @@
 		1DEB91B308733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					i386,
-					ppc,
-				);
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				SDKROOT = macosx;
 				SYMROOT = ../../build;
 				WARNING_CFLAGS = "-wall";
 			};
