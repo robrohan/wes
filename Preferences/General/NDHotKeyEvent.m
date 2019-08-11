@@ -67,31 +67,31 @@ struct HotKeyMappingEntry
  */
 + (BOOL)install
 {
-	if( isInstalled == NO )
-	{
-		NSHashTable *		theHotKeyEvents = [self allHotKeyEvents];
-		EventTypeSpec		theTypeSpec[] =
-								{
-									{ kEventClassKeyboard, kEventHotKeyPressed },
-									{ kEventClassKeyboard, kEventHotKeyReleased }
-								};
+//    if( isInstalled == NO )
+//    {
+//        NSHashTable *        theHotKeyEvents = [self allHotKeyEvents];
+//        EventTypeSpec        theTypeSpec[] =
+//                                {
+//                                    { kEventClassKeyboard, kEventHotKeyPressed },
+//                                    { kEventClassKeyboard, kEventHotKeyReleased }
+//                                };
+//
+//        NDHotKeyEventLock;
+//            if( theHotKeyEvents != nil && isInstalled == NO )
+//            {
+//                if( InstallEventHandler( GetEventDispatcherTarget(), NewEventHandlerUPP((EventHandlerProcPtr)eventHandlerCallback), 2, theTypeSpec, theHotKeyEvents, nil ) == noErr )
+//                {
+//                    isInstalled = YES;
+//                }
+//                else
+//                {
+//                    NSLog(@"Could not install Event handler");
+//                }
+//            }
+//        NDHotKeyEventUnlock;
+//    }
 
-		NDHotKeyEventLock;
-			if( theHotKeyEvents != nil && isInstalled == NO )
-			{
-				if( InstallEventHandler( GetEventDispatcherTarget(), NewEventHandlerUPP((EventHandlerProcPtr)eventHandlerCallback), 2, theTypeSpec, theHotKeyEvents, nil ) == noErr )
-				{
-					isInstalled = YES;
-				}
-				else
-				{
-					NSLog(@"Could not install Event handler");
-				}
-			}
-		NDHotKeyEventUnlock;
-	}
-
-	return isInstalled;
+    return NO; // isInstalled;
 }
 
 #ifdef NDHotKeyEventThreadSafe

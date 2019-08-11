@@ -92,7 +92,8 @@ static OSStatus ACInputProc(AudioConverterRef inAudioConverter, UInt32* ioNumber
 	
 	err = AudioConverterFillComplexBuffer(converter, ACInputProc, self, &ioNumberFrames, &ioData, NULL);
 	int amountRead = ioData.mBuffers[0].mDataByteSize;
-	if (err == kAudioConverterErr_InvalidInputSize) //It returns insz at EOS at times...so run it again to make sure all data is converted
+    //It returns insz at EOS at times...so run it again to make sure all data is converted
+	if (err == kAudioConverterErr_InvalidInputSize)
 	{
 		NSLog(@"INSIZE: %i", amountRead);
 		amountRead += [self convert:dest + amountRead amount:amount - amountRead];

@@ -14,15 +14,18 @@
 
 - (IBAction)addToPlaylist:(id)sender
 {
-	unsigned int index;
+	NSUInteger index;
 	NSIndexSet *selectedIndexes = [outlineView selectedRowIndexes];
 	NSMutableArray *urls = [[NSMutableArray alloc] init];
 
 	for (index = [selectedIndexes firstIndex];
 		 index != NSNotFound; index = [selectedIndexes indexGreaterThanIndex: index])  
 	{
-		[urls addObject:[[outlineView itemAtRow:index] URL]];
-	}
+        NSObject* o = [outlineView itemAtRow:index];
+        if (o != nil) {
+            [urls addObject:[o URL]];
+        }
+    }
 	
 	[controller addToPlaylist:urls];
 	[urls release];
