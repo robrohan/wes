@@ -5,7 +5,6 @@
 *.lock
 
 *~.nib
-
 DerivedData/
 build/
 
@@ -14,6 +13,7 @@ build/
 *.mode2v3
 *.perspectivev3
 
+#    NB: also, whitelist the default ones, some projects need to use these
 !default.pbxuser
 !default.mode1v3
 !default.mode2v3
@@ -23,7 +23,8 @@ build/
 
 xcuserdata/
 
-####
+# Workspace layout is quite spammy. For reference:
+#
 # /(root)/
 #   /(project-name).xcodeproj/
 #     project.pbxproj
@@ -40,10 +41,7 @@ xcuserdata/
 #         (private scheme).xcscheme
 #         xcschememanagement.plist
 #
-#
 
 *.moved-aside
-
 .hg
 .hgignore
-
